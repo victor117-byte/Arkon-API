@@ -1,0 +1,11 @@
+peticion GET paginada
+http://localhost:3000/products?page=1&limit=3
+
+peticion GET Colonia paginada
+​http://localhost:3000/productsColonia/SANTO TOMAS?limit=10&page=1
+
+peticion Get Producto por ID
+http://localhost:3000/productsID?id_product=Rubén Leñero
+
+peticion GET Products cercanos a partir de un punto dado
+http://localhost:3000/productsCoordenada?lat=19.53974&len=-99.14251&page=1&limit=3

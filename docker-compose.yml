@@ -1,0 +1,21 @@
+version: "3"
+
+services: 
+    app:
+        container_name: api_rest
+        restart: always
+        build: .
+        ports: 
+            - "3000:3000"
+        links: 
+            - mongo
+        volumes:
+            - .:/usr/src/app:cached
+    mongo: 
+        container_name: mymongodb
+        image: mongo
+        ports: 
+            - "27017:27017"
+        volumes:
+            - ./db:/db
+        # command: "mongoimport --db data --collection='products' --file='./db/products_1.json' --jsonArray"
