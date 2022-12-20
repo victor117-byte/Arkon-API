@@ -1,4 +1,3 @@
-
 **Pipeline Puntos de acceso Wifi en la Ciudad de México**
 
 1. Descripción del proyecto
@@ -20,7 +19,6 @@ Descripción de Repositorio
   * models - contiene el modelo/schema para la base de datos
   * routes - contiene las rutas a las que se puede consultar este servicio
 
-
 2.- Tecnologías Utilizadas
 
 Stack Tecnológico: NodeJS, Express, Mongodb, JavaScript
@@ -37,7 +35,6 @@ Mongodb: Base de datos no relacional
 
 Javascript: Lenguaje principal del backend
 
-
 5 .- Acceso al proyecto
 
 Consideraciones:
@@ -45,7 +42,7 @@ Consideraciones:
 1. Por defecto se requiere que se encuentre disponible el puerto 3000
 2. Requiere la instalación de NodeJS, Docker y Docker-Compose
 3. Validar la instalación de las dependencias del proyecto con el comando: npm install
-4. El proyecto no inicializa con datos
+4. El proyecto no inicializa con datos, requiere un proceso manual con un script
 
 Instrucciones de ejecución
 
@@ -55,17 +52,17 @@ Instrucciones de ejecución
   * De lo contrario validar las variables de entorno apuntando al contenedor mongo, con el link mongo entre api_rest y mongo en el docker-compose.yml
   * .env: mongodb://mongo/data
 * Posteriormente deberá mandar un mensaje "Server on port 3000".
+  * Validar que el servidor responda, consultando: http://localhost:3000/ping
+  * responda "pong"
 * Importar datos: Al terminar el levantamiento se debe abrir el contenedor mymongodb con bash con los siguientes comandos:
   * docker exec -it mymongodb bash
   * mongoimport --db data --collection='products' --file='./db/products_1.json' --jsonArray
-
 
 5.- Ejemplos de peticiones
 
 Endpoints de la API.
 
 * *page y limit, no son obligatorios, por defecto muestra la pagina 1 y limite de 10 resultados*
-
 
 1. peticion GET paginada
    http://localhost:3000/products?page=1&limit=3
@@ -75,6 +72,5 @@ Endpoints de la API.
    http://localhost:3000/productsID?id_product=Rubén Leñero
 4. peticion GET Products cercanos a partir de un punto dado
    http://localhost:3000/productsCoordenada?lat=19.53974&len=-99.14251&page=1&limit=3
-
 
 Autor: Hernandez Berrios Victor Andres
