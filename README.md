@@ -64,7 +64,7 @@ Instrucciones de ejecución
 
 Endpoints de la API.
 
-* *page y limit, no son obligatorios necesarios por defecto muestra la pagina 1 y limite de 10 resultados*
+* *page y limit, no son obligatorios, por defecto muestra la pagina 1 y limite de 10 resultados*
 
 
 1. peticion GET paginada
